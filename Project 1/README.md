@@ -7,6 +7,10 @@ The code for the script such as the initial conditions, other deliverables (type
 ## Week 1 Feedback (5/5):
 Great job guys! Keep it up for week 2, ya'll are on track! Only suggestion would be to now look into logic on how you can determine if your applied torque is constant, or sinusoidal. Also, make sure plots have proper axis titles!
 
+---------------------------------------------------------------------------------------------------------------------------------------------
+
 This is the Project 1 Week 2 deliverables. 
+
+The files for this week are "Project1_week2.m" and "Project1_wk2.slx".
 
 We tried tweaking the block diagram on Simulink to account for the constant and sinusoidal torque, but we had some trouble getting it to work. The script we wrote in MATLAB didn't account for the other plots needed for this week, but it had some code regarding the CPU time and getting data.

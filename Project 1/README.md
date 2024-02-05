@@ -9,4 +9,4 @@ Great job guys! Keep it up for week 2, ya'll are on track! Only suggestion would
 
 This is the Project 1 Week 2 deliverables. 
 
-We tried tweaking the block diagram on Simulink to account for the constant and sinusoidal torque, but we couldn't really get it going. The script we wrote in MATLAB didn't account for the 2 other plots needed, but it had some code regarding the CPU time and getting data.
+We tried tweaking the block diagram on Simulink to account for the constant and sinusoidal torque, but we had some trouble getting it to work. The script we wrote in MATLAB didn't account for the other plots needed for this week, but it had some code regarding the CPU time and getting data.

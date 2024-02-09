@@ -1,3 +1,5 @@
+## Project 1 Week 1 Deliverables
+
 This is the Project 1 deliverables for this week. 
 
 To run the script, download both "Project1_week1.m" and "P1_demo.slx", and put them in the same folder to ensure that MATLAB doesn't act weird when running the script. 
@@ -8,6 +10,7 @@ The code for the script such as the initial conditions, other deliverables (type
 Great job guys! Keep it up for week 2, ya'll are on track! Only suggestion would be to now look into logic on how you can determine if your applied torque is constant, or sinusoidal. Also, make sure plots have proper axis titles!
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
+## Project 1 Week 2 Deliverables
 
 This is the Project 1 Week 2 deliverables. 
 

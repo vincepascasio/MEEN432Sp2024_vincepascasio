@@ -6,10 +6,11 @@ To run the script, download both "Project1_week1.m" and "P1_demo.slx", and put t
 
 The code for the script such as the initial conditions, other deliverables (types of solvers and time step values), as well as the block diagram and total simulation time for the Simulink model should already be set, so just click "Run" and it should output 6 plots for the Euler and Runge Kutta 4th Order Solvers at the 3 different fixed time steps. 
 
+
 ## Week 1 Feedback (5/5):
 Great job guys! Keep it up for week 2, ya'll are on track! Only suggestion would be to now look into logic on how you can determine if your applied torque is constant, or sinusoidal. Also, make sure plots have proper axis titles!
 
----------------------------------------------------------------------------------------------------------------------------------------------
+
 ## Project 1 Week 2 Deliverables
 
 This is the Project 1 Week 2 deliverables. 
@@ -17,6 +18,7 @@ This is the Project 1 Week 2 deliverables.
 The files for this week are "Project1_week2.m" and "Project1_wk2.slx".
 
 We tried tweaking the block diagram on Simulink to account for the constant and sinusoidal torque, but we had some trouble getting it to work. The script we wrote in MATLAB didn't account for the other plots needed for this week, but it had some code regarding the CPU time and getting data.
+
 
 ## Week 2 Feedback (5/5)
 The else keyword on line 126 is not indented correctly and is causing an error so please make sure to fix this for the final submission (keep in mind, you will need to fix the rest of the lines indentions as well when fixing Line 126, you can highlight it all and press ctrl-i and it should fix it). Another issue I found was that the "fix_solv" is not a variable in the sim function. I see you have the fix_solv_a array so that is something to fix. Additionally, the sim functions for the variable solvers are still using the fixed time step solvers. Another thing I had to fix was in the inital condition constant block of P1_demo.slx (this is the model used in the week 2 script) within the block the variable was "w_0" and not what was set in the script of "w0". I urge the team to make sure you double/triple check that the MATLAB code and simulink model are ready for submission. This is fine for weekly submissions but I will not be going through your script or model trying to debug it for the final submissions so please keep that in mind. There were more errors that occurred when I fixed the above issues so I was not able to fully check for Part 1. Moving onto Part 2, the team will need to create different simulink models for the 3 options on how to connect System 2 to System 1. A suggestion would be to copy the model used for Part 1 and modifying it for each of the options. Once the entire project is complete, make sure to commit all Part 1 and Part 2 files with the commit messgae "Project 1 Final"

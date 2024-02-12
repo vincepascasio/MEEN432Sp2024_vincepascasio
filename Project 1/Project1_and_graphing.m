@@ -70,7 +70,6 @@ for i = 1:length(var_check_a)
 
                                     % cpu data collection
                                     cputime_sim = cputime_after - cputime_before;
-                                    sim_cputime = sim_cputime + cputime_sim;
                                     cputime_a = cat(1, cputime_a, cputime_sim);
                                     
 

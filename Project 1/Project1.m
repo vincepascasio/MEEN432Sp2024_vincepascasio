@@ -18,6 +18,12 @@ cputime_a = {};
 sin_check_a = [0,1]; % check if applied torque is sinusodial or constant
 var_check_a = [0,1]; % check if time step is variable or fixed
 
+% ode arrays
+ode1_a = {};
+ode4_a = {};
+ode45_a = {};
+ode23_a = {};
+
 % Time variable check
 for i = 1:length(var_check_a)
     var_check = var_check_a(i);
@@ -59,18 +65,22 @@ for i = 1:length(var_check_a)
                                     cputime_before = cputime;
 
                                     % Simulation
-                                    simout = sim("Project1_wk2.slx", "Solver", fix_solv_a,"FixedStep",string(dT));
+                                    for j = 1:min(length(dT_a), length(fix_solv_a))
+                                        dT = dT_a(j);
+                                        disp(['Debug: j = ', num2str(j), ', fix_solv_a length = ', num2str(length(fix_solv_a))]); % Debugging output
+                                        simout = sim("SIMULINK_FINAL.slx", "Solver", fix_solv_a(j),"FixedStep",string(dT));
 
-                                    % Calculating cpu time after sim
-                                    cputime_after = cputime;
+                                        % Calculating cpu time after sim
+                                        cputime_after = cputime;
 
-                                    % Simulation data collection
-                                    simout_a = cat(1, simout_a, simout);
-                                    solver_a = cat(1, solver_a, simout.SimulationMetadata.ModelInfo.SolverInfo);
+                                        % Simulation data collection
+                                        simout_a = cat(1, simout_a, simout);
+                                        solver_a = cat(1, solver_a, simout.SimulationMetadata.ModelInfo.SolverInfo);
 
-                                    % cpu data collection
-                                    cputime_sim = cputime_after - cputime_before;
-                                    cputime_a = cat(1, cputime_a, cputime_sim);
+                                        % cpu data collection
+                                        cputime_sim = cputime_after - cputime_before;
+                                        cputime_a = cat(1, cputime_a, cputime_sim);
+                                    end
 
 
                                 end
@@ -102,7 +112,7 @@ for i = 1:length(var_check_a)
                                     cputime_before = cputime;
 
                                     % Simulation
-                                    simout = sim("Project1_wk2.slx", "Solver", fix_solv_a,"FixedStep",string(dT));
+                                    simout = sim("Project1_wk2.slx", "Solver", fix_solv_a(j),"FixedStep",string(dT));
 
                                     % Calculating cpu time after sim
                                     cputime_after = cputime;
@@ -157,7 +167,7 @@ for i = 1:length(var_check_a)
                                 cputime_before = cputime;
 
                                 % Simulation
-                                simout = sim("Project1_wk2.slx", "Solver", var_solv_a,"VariableStep");
+                                simout = sim("Project1_wk2.slx", "Solver", var_solv_a(k),"VariableStep");
 
                                 % Calculating cpu time after sim
                                 cputime_after = cputime;
@@ -200,7 +210,7 @@ for i = 1:length(var_check_a)
                                 cputime_before = cputime;
 
                                 % Simulation
-                                simout = sim("Project1_wk2.slx", "Solver", var_solv_a,"VariableStep");
+                                simout = sim("Project1_wk2.slx", "Solver", var_solv_a(k),"VariableStep");
 
                                 % Calculating cpu time after sim
                                 cputime_after = cputime;
@@ -221,3 +231,21 @@ for i = 1:length(var_check_a)
         end
     end
 end
+
+for i = 1:length(solver_a)
+
+    if solver_a.Simu.Model.Solver.Solver(i) == 'ode1'
+        ode1_a = solver_a;
+
+    elseif solver_a.Simu.Model.Solver.Solver(i) == 'ode4' 
+        ode4_a = solver_a;
+
+    elseif solver_a.Simu.Model.Solver.Solver(i) == 'ode45'
+        ode45_a = solver_a;
+
+    elseif solver_a.Simu.Model.Solver.Solver(i) == 'ode23tb' 
+        ode23_a = solver_a;
+
+    end
+end
+

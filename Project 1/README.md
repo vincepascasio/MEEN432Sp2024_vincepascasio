@@ -26,3 +26,11 @@ The else keyword on line 126 is not indented correctly and is causing an error s
 
 ## Project 1 Final
 This is the Project 1 Final deliverables. We encountered various errors in our code such as "The input arguments of a single output sim command should be model name followed by either a structure with valid parameters as fields with corresponding values or a set of parameters name and parameter value pairs" and "Index exceeds the number of array elements. Index must not exceed 2. Error in Project1 (line 67) simout = sim("SIMULINK_FINAL.slx", "Solver", fix_solv_a(j),"FixedStep",string(dT));". We tried to reach out through email to our TA, but we did not receive a response back. We tried our best to look at the Mathworks forums, and ask Chat GPT to fix these errors in our code, but it continued to create more errors in our code. The most recent MATLAB script is "Project1.m" and the most recent Simulink diagrams were "SIMULINK_FINAL.slx", and there were diagrams for Part 2 named "Project1_Final_Option1.slx" and "Project2_Final_Option2.slx" but the first option diagram was incomplete and we could not write the code for the part 2 deliverables.  
+
+## Final Week Feedback
+- Looking at the Simulink model for Part 1 I noticed a few things: 
+1) The error of "derivative of state '1'" is occuring when running the simulation because the bandaid patch fix for this error was not implemented in the simulink model (look at P1 W2 document).
+2) Some of the sim functions are calling a different simulink model than the "SIMULINK_FINAL"
+3) The reason you are receiving the error of the input arguments of the sim function is due to how you're passing variables for the variable time step solver. There is the variable of the "Solver" but there is also a second variable mentioned "VariableStep" which is not needed and causing the error.
+4) The best way to debug your matlab script would be by checking the "Pause on Errors" option under the Run button so that you can debug easily.
+- Since there were many errors which made it hard to debug and simulate fully through Part 1, there will be points deducted, as well as for not having Part 2. If Dr. Gopalswamy has not mentioned yet in class, there will be a chance for resubmission of this project for a better grade. Either I or Dr. Gopalswamy will make an announcment to the class about it 

@@ -1,3 +1,6 @@
 ## Project 2 Week 1 Submission
 
 For this week, the team was tasked to plot a generated race track that had given measurements for the sections. The sections consisted of two curved sections and 2 straightaway sections. A square/rectangular patch was created to simulate a vehicle going around the generated track; the patch follows the generated points of the center line of the track, and the patch rotates when it goes through the curved sections. Download the "Team23_Project2_Week1.m" file and hit Run. The code should display a plot of the mentioned details above, which is a patch (representative of a vehicle) that travels along the generated track. The team asked for help during office hours and had some initial code regarding the patch and the plot of the generated track, but had some trouble with the animated line and generating a patch that travels along the centerline of the animated line. With some adjustments made from the advice given by the TA, the team was able to tweak the code in order to achieve the goals for the Week 1 submission.
+
+## Week 1 Feedback (5/5)
+Good job Team 23! For Week 2, start developing a lateral dynamic model of a vehicle that contains subsystems that are listed in the Week 2 document.

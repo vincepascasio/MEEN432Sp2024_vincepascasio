@@ -1,4 +1,4 @@
-DriveData = [0
+DriveData_Hwy = [0
 0
 0
 2
@@ -764,4 +764,4 @@ DriveData = [0
 0
 0
 0];
-Time = (0:1:767)';
+Time = (0:1:765)';
